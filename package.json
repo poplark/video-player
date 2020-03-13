@@ -4,7 +4,8 @@
   "description": "A video player can play videos one by one",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [
     "video",
@@ -19,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/poplark/video-player/issues"
   },
-  "homepage": "https://github.com/poplark/video-player#readme"
+  "homepage": "https://github.com/poplark/video-player#readme",
+  "devDependencies": {
+    "@types/video.js": "^7.3.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2",
+    "write-file-webpack-plugin": "^4.5.1"
+  },
+  "dependencies": {
+    "video.js": "^7.6.6"
+  }
 }

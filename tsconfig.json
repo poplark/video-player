@@ -2,8 +2,8 @@
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* 增置编译 */
-    "target": "es5",                          /* 目标语言的版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
-    "module": "commonjs",                     /* 生成代码的模块标准: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "target": "ES2015",                       /* 目标语言的版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "es2015",                       /* 生成代码的模块标准: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
     // "lib": [],                             /* TS 需要引用的库，即声明文件，es5 默认"dom" */
     // "allowJs": true,                       /* 允许编译：IS 文件（js、jsx) */
     // "checkJs": true,                       /* 允许在JS文件中报错，通常与allowJS _起使用 */
@@ -63,7 +63,9 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": [ ],
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "dist",
