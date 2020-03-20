@@ -12,7 +12,7 @@
     // "declarationMap": true,                /* 生成声明文件的 sourceMap */
     // "sourceMap": true,                     /* 生成目标文件的 sourceMap */
     // "outFile": "./",                       /* 将多个相互依赖的文件生成一个文件，可以用在AMD模块中 */
-    // "outDir": "./",                        /* 指定输出目录 */
+    "outDir": "./lib",                        /* 指定输出目录 */
     // "rootDir": "./",                       /* 指定输入文件目录（用于输出） --outDir. */
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
