@@ -1,5 +1,4 @@
 import { EventEmitter } from 'events';
-import { isNumber } from './common/utils';
 
 enum SourceState {
   init = 0,
@@ -8,8 +7,9 @@ enum SourceState {
 }
 
 export class Source extends EventEmitter {
+  videoElem: HTMLVideoElement
   state: SourceState = SourceState.init
-  url: string
+  uri: string
 
   _duration: number = 0
   get duration(): number {
@@ -23,22 +23,19 @@ export class Source extends EventEmitter {
     }
   }
 
-  private loadMeta() {
-    this.state = SourceState.loading;
-    let video = document.createElement('video');
-    video.onloadedmetadata = () => {
-      this.duration = video.duration;
-    }
-    video.src = this.url;
+  constructor(uri: string) {
+    super();
+    this.uri = uri;
+    this.videoElem = document.createElement('video');
+    this.init();
   }
 
-  constructor(url: string, duration?: number) {
-    super();
-    this.url = url;
-    if (isNumber(duration)) {
-      this.duration = <number>duration;
-    } else {
-      this.loadMeta();
+  private init() {
+    this.state = SourceState.loading;
+    this.videoElem.preload = 'auto';
+    this.videoElem.onloadedmetadata = () => {
+      this.duration = this.videoElem.duration;
     }
+    this.videoElem.src = this.uri;
   }
 }

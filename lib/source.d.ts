@@ -6,12 +6,13 @@ declare enum SourceState {
     ready = 2
 }
 export declare class Source extends EventEmitter {
+    videoElem: HTMLVideoElement;
     state: SourceState;
-    url: string;
+    uri: string;
     _duration: number;
     get duration(): number;
     set duration(sec: number);
-    private loadMeta;
-    constructor(url: string, duration?: number);
+    constructor(uri: string);
+    private init;
 }
 export {};
